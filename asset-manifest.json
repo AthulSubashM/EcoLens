@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/EcoLens/eco-lens/static/css/main.fc609885.css",
+    "main.js": "/EcoLens/eco-lens/static/js/main.b4725c8d.js",
+    "static/js/453.91e10d8a.chunk.js": "/EcoLens/eco-lens/static/js/453.91e10d8a.chunk.js",
+    "index.html": "/EcoLens/eco-lens/index.html",
+    "main.fc609885.css.map": "/EcoLens/eco-lens/static/css/main.fc609885.css.map",
+    "main.b4725c8d.js.map": "/EcoLens/eco-lens/static/js/main.b4725c8d.js.map",
+    "453.91e10d8a.chunk.js.map": "/EcoLens/eco-lens/static/js/453.91e10d8a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fc609885.css",
+    "static/js/main.b4725c8d.js"
+  ]
+}
