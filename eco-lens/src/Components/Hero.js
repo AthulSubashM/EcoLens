@@ -1,4 +1,4 @@
-import '../Styles/globals.css';
+
 import React from 'react';
 
 export default function Hero(){

@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+:root{
+    --primary: #F7D327;
+    --secondary: #FEED9F;
+    --teritery: #D0A823;
+    --white: #FBFBF5;
+    --black: #504c41;
+    /* --black: #000000; */
+    --OpenSans: "Open Sans";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--secondary);
+    /* background-image: url(/assets/background.jpg);
+    background-size: cover;
+
+    background-repeat: no-repeat; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1,h2,h3,h4,h5,h6,p,ol,ul,li,a,button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style-type: none;
+  color: var(--black);
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+/* Navbar */
+.navbar-container{
+    z-index: 9;
+    padding: 0 10vw;
+
+
+    background-color: var(--secondary);
+}
+.navbar-contact{
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: end;
+    padding-top: 0.2rem;
+
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-menu-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20vw;
+}
+.navbar-menu-items li{
+    margin: 1rem 0;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar-bottom{
+    height: 0.1rem;
+    background-color: var(--black);
+
+}
+
+
+
+/* Hero Page*/
+.hero-container{
+
+    min-height: 70vh;
+
 }
