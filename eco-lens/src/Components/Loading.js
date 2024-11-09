@@ -1,5 +1,5 @@
 import React from 'react';
-import loadingImage from '../Assets/eco-bulb.png';
+import loadingImage from '../Assets/eco.gif';
 import '../Loading.css';
 
 export default function Loading(){
@@ -7,7 +7,7 @@ export default function Loading(){
         <>
             <div className="loading-container">
                 <div className="loading_image">
-                    <img src = {loadingImage} alt="loading icon" />
+                    <img src = {loadingImage} alt="loading animation" />
                 </div>
             </div>
         </>
