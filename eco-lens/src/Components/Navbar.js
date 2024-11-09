@@ -6,21 +6,17 @@ import React from 'react';
 export default function Navbar(){
     return(
         <>
-            <div className="navbar-container">
-                <div className="navbar-menu">
-                    <div className="navbar-contact"><Link href="/">Contact</Link></div>
-                    <ul className="navbar-menu-items">
-                        <li><Link href="/">Home</Link></li>
-                        <li><Link href="/"></Link></li>
-                        <li><Link href="/"></Link></li>
-                        <li><Link href="/"></Link></li>
-                        <li><Link href="/"></Link></li>
-                        <li><Link href="/">About</Link></li>
-                    </ul>
-
-                </div>
-                <div className="navbar-bottom"></div>
-            </div>
+            <nav class="navbar">
+        <div class="navbar-container">
+            <h1 class="logo">Eco Lens</h1>
+            <ul class="navbar-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#eco-tips">Eco Tips</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
         </>
     );
 }

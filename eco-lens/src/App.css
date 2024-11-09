@@ -1,79 +1,160 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-
-:root{
-    --primary: #F7D327;
+:root {
+    --primary: #000000;
     --secondary: #FEED9F;
-    --teritery: #D0A823;
+    --tertiery: #085D2A;
     --white: #FBFBF5;
     --black: #504c41;
-    /* --black: #000000; */
-    --OpenSans: "Open Sans";
+    --highlight: #A5D6A7;  /* Light green */
+    --dark-green: #388e3c;  /* Dark green for eco theme */
+    --background-light: #EFF6E0; /* Light background for contrast */
+    --font-family: 'Open Sans', sans-serif;
 }
 
-body{
+body {
+    background-color: var(--background-light);
+    font-family: var(--font-family);
     margin: 0;
-    padding: 0;
-
-    background-color: var(--secondary);
-    /* background-image: url(/assets/background.jpg);
-    background-size: cover;
-
-    background-repeat: no-repeat; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the content is vertically centered */
 }
-
-h1,h2,h3,h4,h5,h6,p,ol,ul,li,a,button {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  list-style-type: none;
-  color: var(--black);
-  text-decoration: none;
-  font-family: "Open Sans", sans-serif;
-}
-
-
 
 /* Navbar */
-.navbar-container{
-    z-index: 9;
-    padding: 0 10vw;
-
-
-    background-color: var(--secondary);
-}
-.navbar-contact{
-    font-size: 1rem;
-    font-weight: 600;
+.navbar {
+    background-color: var(--dark-green);
+    padding: 20px 30px;
     display: flex;
-    justify-content: end;
-    padding-top: 0.2rem;
-
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
 }
 
-.navbar-menu-items{
+.navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-right: 20vw;
+    width: 100%;
+    max-width: 1200px;
 }
-.navbar-menu-items li{
-    margin: 1rem 0;
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.navbar-links {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.navbar-links li {
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links a:hover {
+    background-color: var(--highlight); /* Light green background on hover */
+    color: #fff;
+    transform: translateY(-2px); /* Slight upward motion for click effect */
+}
+
+.navbar-links a:focus, .navbar-links li:focus {
+    background-color: var(--highlight);
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+.navbar-links a:active {
+    background-color: #A0D9A1;
+}
+
+/* Hero Page */
+.hero-container {
+    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Eco Tips Box Styling */
+.eco-tips-box {
+    background-color: #ffffff;  /* White background for the box */
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;  /* Increase max-width to make the box more balanced */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 40px;  /* Space between navbar and the eco tips box */
+}
+
+/* Hover effect */
+.eco-tips-box:hover {
+    transform: translateY(-5px);  /* Slightly lift the box on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);  /* Stronger shadow on hover */
+}
+
+/* Header Styling */
+.eco-tips-box h2 {
+    color: var(--dark-green);  /* Dark green for the title */
+    font-size: 26px;  /* Slightly larger font size */
+    margin-bottom: 15px;
     font-weight: 600;
-    font-size: 1.2rem;
+    text-align: center; /* Center align the title */
 }
 
-.navbar-bottom{
-    height: 0.1rem;
-    background-color: var(--black);
-
+/* List Styling */
+.eco-tips-box ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
 }
 
+.eco-tips-box li {
+    font-size: 18px;  /* Increased font size for readability */
+    color: #2c6e49;  /* Medium green for the text */
+    margin-bottom: 18px;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+}
 
+.eco-tips-box li:before {
+    content: '✔';  /* Green checkmark */
+    color: var(--dark-green);
+    margin-right: 10px;
+    font-size: 20px; /* Slightly larger checkmark */
+}
 
-/* Hero Page*/
-.hero-container{
-
-    min-height: 70vh;
-
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .eco-tips-box {
+        width: 90%; /* Take up more space on smaller screens */
+    }
 }
