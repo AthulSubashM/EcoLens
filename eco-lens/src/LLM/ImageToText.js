@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useImageData } from '../Contexts/ImageDataContext';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const UploadImage = () => {
-  const [imageFile, setImage] = useState(null);
-  const [prediction, setPrediction] = useState(null);
+  const [localImageFile, setLocalImageFile] = useState(null);  // Local state for the image file
+  const { setImageData } = useImageData();  // Access the context
 
   // This function will convert the selected image to base64 format
   const handleImageChange = (event) => {
@@ -11,23 +13,22 @@ const UploadImage = () => {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        // Store the base64 image string in state
-        setImage(reader.result);
+        setLocalImageFile(reader.result);
       };
-      reader.readAsDataURL(file); // Convert the file to base64
+      reader.readAsDataURL(file);  // Convert the file to base64
     }
   };
 
   const handleSubmit = async () => {
-    if (!imageFile) {
+    if (!localImageFile) {
       alert("Please upload an image first!");
       return;
     }
 
     // Send the image as base64 encoded string to Hugging Face API
-    const base64Image = imageFile.split(',')[1]; // Remove the base64 prefix
+    const base64Image = localImageFile.split(',')[1];  // Remove the base64 prefix
     const data = {
-      inputs: base64Image, // Base64 string without prefix is sent here
+      inputs: base64Image,  // Base64 string without the prefix
     };
 
     try {
@@ -36,13 +37,16 @@ const UploadImage = () => {
         data,
         {
           headers: {
-            'Authorization': 'Bearer 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', // Use your Hugging Face API key
-            'Content-Type': 'application/json', // Content type should be JSON
+            'Authorization': 'Bearer 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',  // Use your Hugging Face API key
+            'Content-Type': 'application/json',  // Content type should be JSON
           }
         }
       );
-      // Display the prediction from the response
-      setPrediction(response.data);
+
+      const labels = response.data.map(item => item.label);
+
+      // Store the image and prediction in the context
+      setImageData({ imageFile: localImageFile, prediction: labels });
     } catch (error) {
       console.error("Error uploading image:", error);
     }
@@ -53,7 +57,9 @@ const UploadImage = () => {
       <h1>Upload Image for Prediction</h1>
       <input type="file" onChange={handleImageChange} />
       <button onClick={handleSubmit}>Submit</button>
-      {prediction && <h2>Prediction: {JSON.stringify(prediction)}</h2>}
+
+      {/* Display prediction from context */}
+      {localImageFile && <h2>Image Selected. <Link to="/test">View Prediction</Link></h2>}
     </div>
   );
 };
