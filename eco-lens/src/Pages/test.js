@@ -8,26 +8,38 @@ const PredictionDetail = () => {
 
   const handleYesClick = async () => {
     if (!firstResult) {
-      alert("No prediction Result available.");
+      alert("No prediction result available.");
       return;
     }
 
-    const prompt = `Give 2-3 sentences on how to recycle ${firstResult}`;
+    // Construct the request body with the correct structure for Groq API
+    const requestBody = {
+      model: 'llama3-8b-8192',  // You can replace with the model you want to use
+      messages: [
+        {
+          role: 'user',
+          content: `Give 2-3 sentences on how to recycle in JSON format ${firstResult}`  // Send the first label as a prompt
+        }
+      ],
+      response_format: { type: 'json_object' }
+    };
 
     try {
+      // Send the request to Groq API
       const apiResponse = await axios.post(
-        'https://api-inference.huggingface.co/models/meta-llama/Llama-3.2-3B-Instruct', // Replace with your Hugging Face model endpoint
-        { inputs: prompt },
+        'https://api.groq.com/openai/v1/chat/completions', // Groq API endpoint
+        requestBody, // Send the structured request body
         {
           headers: {
-            'Authorization': 'Bearer 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', // Use your Hugging Face API key
-            'Content-Type': 'application/json',
-          },
+            'Authorization': 'Bearer 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', // Replace with your Groq API key
+            'Content-Type': 'application/json' // Ensure content type is JSON
+          }
         }
       );
-      setResponse(apiResponse.data); // Store the response in the state
+
+      setResponse(apiResponse.data); // Store the API result in state
     } catch (error) {
-      console.error("Error sending to Hugging Face:", error);
+      console.error("Error sending data to Groq AI:", error);
     }
   };
 
@@ -63,7 +75,7 @@ const PredictionDetail = () => {
       {response && (
         <div>
           <h2>Llama Response</h2>
-          {/* <p>{response}</p> */}
+          <p>{response.choices && response.choices[0].message.content}</p> {/* Display the response message */}
         </div>
       )}
     </div>
