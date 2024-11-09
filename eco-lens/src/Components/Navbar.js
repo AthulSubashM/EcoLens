@@ -1,15 +1,26 @@
-/*Navbar.js*/
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Navbar() {
-    return (
-        <div className="navbar-container">
-            <ul className="navbar-menu-items">
-                <li><Link to="/">🏠<span>Home</span></Link></li>
-                <li><Link to="/">📖<span>About</span></Link></li>
-                <li><Link to="/">📞<span>Contact</span></Link></li>
-            </ul>
-        </div>
+import React from 'react';
+
+
+export default function Navbar(){
+    return(
+        <>
+            <div className="navbar-container">
+                <div className="navbar-menu">
+                    <div className="navbar-contact"><Link href="/">Contact</Link></div>
+                    <ul className="navbar-menu-items">
+                        <li><Link href="/">Home</Link></li>
+                        <li><Link href="/"></Link></li>
+                        <li><Link href="/"></Link></li>
+                        <li><Link href="/"></Link></li>
+                        <li><Link href="/"></Link></li>
+                        <li><Link href="/">About</Link></li>
+                    </ul>
+
+                </div>
+                <div className="navbar-bottom"></div>
+            </div>
+        </>
     );
 }
