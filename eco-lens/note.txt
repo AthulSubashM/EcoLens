@@ -1,0 +1,6 @@
+Organic
+recyclable: bottles, cardboard, metal/glass/aluminium/plastic
+electronic waste:
+Hazardous waste
+non-recyclable: some plastic
+textile
