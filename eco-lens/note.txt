@@ -1,0 +1,16 @@
+Organic
+recyclable: bottles/cans, cardboard/paper, metal/glass/aluminium/plastic
+electronic waste:
+Hazardous waste
+non-recyclable: some plastic
+textile
+
+
+imagetotext
+texttomoretext: implement with better prompt
+
+camera access
+location access / string to search through google maps
+
+
+  // "homepage": "https://athulsubashm.github.io/EcoLens/eco-lens",
