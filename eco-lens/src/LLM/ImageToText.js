@@ -54,7 +54,9 @@ const UploadImage = () => {
 
   return (
     <div>
+      <div class="button-container">
       <h1>Upload Image for Prediction</h1>
+      </div>
       <input type="file" onChange={handleImageChange} />
       <button onClick={handleSubmit}>Submit</button>
 

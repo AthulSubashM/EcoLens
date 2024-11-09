@@ -1,0 +1,6 @@
+img {
+    max-width: 100px; /* Set a maximum width */
+    max-height: 100px; /* Set a maximum height */
+    width: auto; /* Allow width to adjust proportionally */
+    height: auto; /* Allow height to adjust proportionally */
+}
