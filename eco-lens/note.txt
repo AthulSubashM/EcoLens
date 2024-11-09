@@ -14,3 +14,5 @@ location access / string to search through google maps
 
 
   // "homepage": "https://athulsubashm.github.io/EcoLens/eco-lens",
+
+groq: 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
