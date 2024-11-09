@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/EcoLens/eco-lens/static/css/main.fc609885.css",
-    "main.js": "/EcoLens/eco-lens/static/js/main.83c99bcb.js",
-    "static/js/453.91e10d8a.chunk.js": "/EcoLens/eco-lens/static/js/453.91e10d8a.chunk.js",
-    "index.html": "/EcoLens/eco-lens/index.html",
-    "main.fc609885.css.map": "/EcoLens/eco-lens/static/css/main.fc609885.css.map",
-    "main.83c99bcb.js.map": "/EcoLens/eco-lens/static/js/main.83c99bcb.js.map",
-    "453.91e10d8a.chunk.js.map": "/EcoLens/eco-lens/static/js/453.91e10d8a.chunk.js.map"
+    "main.css": "/eco-lens/static/css/main.82726841.css",
+    "main.js": "/eco-lens/static/js/main.89555f55.js",
+    "static/js/453.91e10d8a.chunk.js": "/eco-lens/static/js/453.91e10d8a.chunk.js",
+    "static/media/eco.gif": "/eco-lens/static/media/eco.0111a7da9a0bffd6dfae.gif",
+    "index.html": "/eco-lens/index.html",
+    "main.82726841.css.map": "/eco-lens/static/css/main.82726841.css.map",
+    "main.89555f55.js.map": "/eco-lens/static/js/main.89555f55.js.map",
+    "453.91e10d8a.chunk.js.map": "/eco-lens/static/js/453.91e10d8a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc609885.css",
-    "static/js/main.83c99bcb.js"
+    "static/css/main.82726841.css",
+    "static/js/main.89555f55.js"
   ]
 }
