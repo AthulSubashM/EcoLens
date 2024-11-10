@@ -3,7 +3,7 @@ import Hero from "../Components/Hero";
 import ImageToText from "../LLM/ImageToText";
 import LoadingImage from "../Components/Loading";
 import React from 'react';
-import background from '../Assets/bg.jpg';
+import Background from "../Components/Background";
 
 
 export default function Home() {
@@ -11,6 +11,7 @@ export default function Home() {
         <>
         
         <LoadingImage/>
+          <Background/>
           <Nav/>
           <ImageToText/>
           
