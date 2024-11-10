@@ -10,6 +10,10 @@
 }
 
 body {
+    background-image: url("Assets/bg_test.jpg");
+    background-size: cover;      /* Make the background cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent the image from tiling */
+    background-position: center;  /* Center the background image */
     margin: 0;
     padding: 0;
     display: flex;
