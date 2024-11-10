@@ -20,7 +20,15 @@ const UploadImage = () => {
         // Automatically trigger the prediction after setting the image
         handleImagePrediction(reader.result);
       };
+      
+      reader.onerror = (error) => {
+        console.error('Error reading file:', error);
+        alert('Error reading the file. Please try again.');
+      };
+
       reader.readAsDataURL(file); // Convert the file to base64
+    } else {
+      alert('No file selected.');
     }
   };
 
@@ -49,22 +57,26 @@ const UploadImage = () => {
         }
       );
 
-      const labels = response.data.map((item) => item.label);
+      if (response.data && Array.isArray(response.data)) {
+        const labels = response.data.map((item) => item.label);
+        // Store the image and prediction in the context
+        setImageData({ imageFile: imageData, prediction: labels });
 
-      // Store the image and prediction in the context
-      setImageData({ imageFile: imageData, prediction: labels });
-
-      // Redirect to result page after prediction
-      navigate('/confirm');
+        // Redirect to result page after prediction
+        navigate('/confirm');
+      } else {
+        alert('No prediction results found.');
+      }
     } catch (error) {
       console.error('Error uploading image:', error);
+      alert('Failed to upload image. Please try again.');
     }
   };
 
   return (
     <div className='itt-container'>
       <label htmlFor="camera-input" className="capture-button">
-      <img src={CameraIcon} alt="Search" />
+        <img src={CameraIcon} alt="Capture" />
       </label>
       <input
         type="file"
@@ -75,7 +87,7 @@ const UploadImage = () => {
         style={{ display: 'none' }} // Hide the input element
       />
       <label htmlFor="upload-input" className="upload-button">
-      <img src={UploadIcon} alt="Search" />
+        <img src={UploadIcon} alt="Upload" />
       </label>
       <input
         type="file"

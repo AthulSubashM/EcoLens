@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useImageData } from '../Contexts/ImageDataContext'; // Import the context hook
 import axios from 'axios';
-import Nav from "../Components/Navbar";
-import Footer from '../Components/Footer';
 import LoadingAni from '../Components/Loading';
-import Search from '../Components/Search';
 
-const PredictionDetail = () => {
-  const { imageData, firstResult } = useImageData(); // Access prediction data and firstResult from context
+const ResultBox = () => {
+  const { firstResult } = useImageData(); // Access firstResult from context
   const [response, setResponse] = useState(null); // State to store the response from Llama model
-  const [loading, setLoading] = useState(false); // State to handle loading
+  const [loading, setLoading] = useState(true); // Loading state to handle API request
+  const [error, setError] = useState(null); // State for error handling
 
   useEffect(() => {
     const fetchPrediction = async () => {
       if (!firstResult) {
         alert("No prediction result available.");
+        setLoading(false);
         return;
       }
 
@@ -50,6 +49,7 @@ const PredictionDetail = () => {
         setResponse(parsedContent); // Store the parsed JSON in state
       } catch (error) {
         console.error("Error sending data to Groq AI:", error);
+        setError("An error occurred while fetching the prediction.");
       } finally {
         setLoading(false); // Stop loading when request is complete
       }
@@ -59,28 +59,24 @@ const PredictionDetail = () => {
 
   }, [firstResult]); // Re-run the effect when firstResult changes
 
+  if (loading) {
+    return <div className='result-box'>
+        <LoadingAni />
+    </div>; // Loading state
+  }
+
+  if (error) {
+    return <p>{error}</p>; // Error handling
+  }
+
   return (
     <>
-      <Nav />
-      <div className='result-container'>
       <div className='result-box'>
-        {loading ? (
-           <LoadingAni/>
-        ) : (
-          response && (
-            <div>
-              <Search />
-              <h2>" {firstResult} "</h2>
-              <h2>{response.category}</h2> {/* Display category */}
-              <p>{response.description}</p> {/* Display description */}
-            </div>
-          )
-        )}
+        <h2>{response.category}</h2> {/* Display category */}
+        <p>{response.description}</p> {/* Display description */}
       </div>
-      </div>
-      <Footer />
     </>
   );
 };
 
-export default PredictionDetail;
+export default ResultBox;

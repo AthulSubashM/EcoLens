@@ -14,7 +14,7 @@ export const ImageDataProvider = ({ children }) => {
   useEffect(() => {
     if (imageData.prediction && imageData.prediction.length > 0) {
       // Store the first label before the comma
-      setFirstResult(imageData.prediction[0].split(',')[0]);
+      setFirstResult(imageData.prediction[0].split(',')[0].charAt(0).toUpperCase() + imageData.prediction[0].split(',')[0].slice(1));
     }
   }, [imageData.prediction]); // Depend on prediction changes
 
@@ -24,3 +24,4 @@ export const ImageDataProvider = ({ children }) => {
     </ImageDataContext.Provider>
   );
 };
+

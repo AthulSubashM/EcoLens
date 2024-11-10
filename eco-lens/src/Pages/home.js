@@ -3,6 +3,7 @@ import Search from "../Components/Search";
 import ToolTips from "../Components/ToolTips";
 import ImageToText from "../LLM/ImageToText";
 import LoadingImage from "../Components/Loading";
+import Footer from "../Components/Footer";
 import React from 'react';
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
           <ImageToText/>
         </div>
           <ToolTips/>
-          
+          <Footer/>
           
         </>
       );

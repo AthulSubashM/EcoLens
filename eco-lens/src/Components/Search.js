@@ -18,6 +18,12 @@ export default function Hero() {
         navigate('/result'); // Navigate to the results page
     };
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') { // Check if the Enter key was pressed
+            handleSearchClick(); // Trigger the search
+        }
+    };
+
     return (
         <div className="search-container">
             <div className="search-box">
@@ -26,6 +32,7 @@ export default function Hero() {
                     placeholder="Search..."
                     value={searchInput}
                     onChange={(e) => setSearchInput(e.target.value)} // Update search input state
+                    onKeyDown={handleKeyDown} // Listen for the Enter key press
                 />
                 <button onClick={handleSearchClick}>
                     <img src={SearchIcon} alt="Search" />

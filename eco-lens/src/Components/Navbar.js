@@ -11,7 +11,7 @@ export default function Navbar(){
     
     <div class="navbar-container">
     
-    <h1>Eco Lens</h1>
+    <h1><Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}> Eco Lens</Link></h1>
     </div>
     
 

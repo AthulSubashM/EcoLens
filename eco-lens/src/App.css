@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Barriecito&family=Delius&display=swap');
 
 :root {
     --primary: #428d74;
     --secondary: #f9f8f8;
-    --white: #FBFBF5;
+    --teritary: #36b1a1;
+    --white: #ffffff;
     --black: #000000;
     --OpenSans: "Open Sans", sans-serif;
     --font-heading: "Poppins", sans-serif;
@@ -12,18 +14,19 @@
 body {
     background-image: url("Assets/bg_test.jpg");
     background-size: cover;      /* Make the background cover the entire viewport */
+    background-attachment: fixed;
     background-repeat: no-repeat; /* Prevent the image from tiling */
     background-position: center;  /* Center the background image */
     margin: 0;
     padding: 0;
     font-family: var(--OpenSans);
-    min-height: 100%;
+    min-height: 100vh;
     text-align: center;
 }
 
 /* Heading */
 h1 {
-    color: var(--white);
+    color: var(--secondary);
     font-weight: 700;
     font-size: 2.2rem;
     margin: 0;
@@ -46,17 +49,25 @@ h1 {
     text-align: center;
     border: 1px solid rgba(var(--primary), 0.2);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-    color: var(--white);
+    color: var(--secondary);
     padding: 1rem 0;
-    backdrop-filter: blur(5px) saturate(150%);
-    
+    backdrop-filter: blur(5px) saturate(150%); 
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.navbar-container h1{
+    cursor: pointer;
+    font-family: "Delius";
+    font-size: 2.6rem;
 }
 
 /* Contact Info Styling */
 .navbar-contact {
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--white);
+    color: var(--secondary);
     margin-bottom: 10px; /* Slightly more space below the contact info */
 }
 
@@ -72,7 +83,7 @@ h1 {
 .navbar-menu-items li {
     font-size: 1.1rem;
     font-weight: 500;
-    color: var(--white);
+    color: var(--secondary);
     border-radius: 15px; /* Rounded corners for each item */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth color transition */
     padding: 8px 15px; /* Add padding for more clickable area */
@@ -105,7 +116,7 @@ h1 {
     border: 2px solid var(--primary);
     border-radius: 10px;
     padding: 0;
-    background-color: var(--white);
+    background-color: var(--secondary);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -121,7 +132,7 @@ h1 {
 .search-container button {
     border: none;
     cursor: pointer;
-    background-color: var(--white);
+    background-color: var(--secondary);
     margin: 0 0.5rem;
 }
 .search-container button img{
@@ -135,7 +146,7 @@ h1 {
 
 /* Tips Box */
 .tips-box {
-    background-color: var(--white);
+    background-color: var(--secondary);
     border: 1px solid var(--primary);
     border-radius: 10px;
     padding: 2rem;
@@ -212,12 +223,12 @@ h1 {
     background-color: var(--black);
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .capture-button:hover, .upload-button:hover {
-    background-color: #36b1a1;
+    background-color: var(--teritary);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
 }
 
 
@@ -226,7 +237,7 @@ h1 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: white;
+    color: var(--secondary);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -236,29 +247,129 @@ h1 {
 
 .confirm-container{
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto 1fr;
     justify-items: center;
     width: 100%;
 }
 
-.confirm-container img{
+.confirm-container .confirm-img{
     margin: 2rem 1rem;
-    min-height: 40vh;
+    min-height: 60vh;
     min-width: 20rem;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.confirm-text{
+.confirm-text, .result-box{
     background-color: var(--white);
     border: 1px solid var(--primary);
     min-width: 20rem;
+    max-width: 20rem;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    max-height: 12rem;
-    
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;   
+    min-height: 4rem;
 }
+
+.confirm-text button {
+    padding: 1rem;
+    margin: 0.5rem 1.5rem;
+    border-radius: 10px;
+    border-style: none;
+    background-color: var(--black);
+    color: var(--white);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+    width: 4rem;
+}
+
+.confirm-text button:hover {
+    background-color: var(--teritary);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.confirm-text .yes-button{
+    background-color: var(--primary);
+}
+
+.result-box p{
+    margin: 1rem 2rem;
+    font-size: 1rem;
+}
+
+.result-box{
+    margin-top: -10rem;
+    min-height: 19rem;
+}
+
+.result-box .loading-animation{
+    min-width: 10rem;
+    min-height: 10rem;
+    margin: auto;
+    background-color: var(--white);
+    border-style: none;
+    box-shadow: none;
+    margin-top: 6rem;
+}
+
+.result-container .result-box{
+    margin: 4rem auto;
+    min-height: 65vh;
+}
+
+.result-box .search-box{
+    margin: auto;
+}
+
+.result-box .itt-container{
+    margin-left: 5rem;
+}
+
+.other-results ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.other-results li{
+    list-style-type: none;
+}
+
+
+.other-results button {
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    border-style: none;
+    background-color: var(--secondary);
+    color: var(--black);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid var(--primary);
+}
+
+.other-results button:hover {
+    background-color: var(--teritary);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.other-results h3{
+    margin: 2rem 0;
+}
+
+
+.footer-container{
+    min-height: 30vh;
+    background-color: var(--black);
+    min-width: 100vw;
+}
+
+
 
 
 @media screen and (max-width: 600px) {
