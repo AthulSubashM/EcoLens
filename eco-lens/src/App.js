@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from './Pages/home';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import TestPage from './Pages/test';
+import TestPage from './Pages/result';
 import { ImageDataProvider } from './Contexts/ImageDataContext';
 
 import './App.css';
@@ -12,7 +12,7 @@ function App() {
       <ImageDataProvider>
       <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/test" element={<TestPage />} />
+          <Route path="/result" element={<TestPage />} />
         </Routes>
       </ImageDataProvider>
     </BrowserRouter>

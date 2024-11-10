@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useImageData } from '../Contexts/ImageDataContext';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirecting
+import CameraIcon from '../Assets/cameraIcon.png';
+import UploadIcon from '../Assets/uploadIcon.png';
 
 const UploadImage = () => {
   const [localImageFile, setLocalImageFile] = useState(null); // Local state for the image file
@@ -53,21 +55,16 @@ const UploadImage = () => {
       setImageData({ imageFile: imageData, prediction: labels });
 
       // Redirect to result page after prediction
-      navigate('/test');
+      navigate('/result');
     } catch (error) {
       console.error('Error uploading image:', error);
     }
   };
 
   return (
-    <div>
-      <div className="button-container">
-        <h1>Capture or Upload Image for Prediction</h1>
-      </div>
-
-      {/* Button for opening the camera */}
+    <div className='itt-container'>
       <label htmlFor="camera-input" className="capture-button">
-        Capture
+      <img src={CameraIcon} alt="Search" />
       </label>
       <input
         type="file"
@@ -77,10 +74,8 @@ const UploadImage = () => {
         onChange={handleImageChange}
         style={{ display: 'none' }} // Hide the input element
       />
-
-      {/* File input for uploading an image */}
       <label htmlFor="upload-input" className="upload-button">
-        Upload Image
+      <img src={UploadIcon} alt="Search" />
       </label>
       <input
         type="file"

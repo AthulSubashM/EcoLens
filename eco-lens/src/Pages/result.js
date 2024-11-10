@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useImageData } from '../Contexts/ImageDataContext'; // Import the context hook
 import axios from 'axios';
+import Nav from "../Components/Navbar";
 
 const PredictionDetail = () => {
   const { imageData, firstResult } = useImageData(); // Access prediction data and first Result from context
@@ -48,6 +49,8 @@ const PredictionDetail = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <div>
       <h1>Prediction Details</h1>
       {imageData.imageFile ? (
@@ -79,6 +82,7 @@ const PredictionDetail = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

@@ -6,11 +6,7 @@ import '../Loading.css';
 export default function Loading(){
     return(
         <>
-            <div className="loading-container">
-                <div className="loading_image">
-                    <img src = {loadingImage} alt="loading animation" />
-                </div>
-            </div>
+            <img className='loading-animation' src = {loadingImage} alt="loading animation" />
         </>
     );
 }

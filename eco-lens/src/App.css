@@ -4,7 +4,7 @@
     --primary: #428d74;
     --secondary: #f9f8f8;
     --white: #FBFBF5;
-    --black: #504c41;
+    --black: #000000;
     --OpenSans: "Open Sans", sans-serif;
     --font-heading: "Poppins", sans-serif;
 }
@@ -16,24 +16,24 @@ body {
     background-position: center;  /* Center the background image */
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--secondary);
     font-family: var(--OpenSans);
-    
+    min-height: 100%;
     text-align: center;
 }
 
 /* Heading */
 h1 {
     color: var(--white);
-    font-family: var(--font-heading);
     font-weight: 700;
     font-size: 2.2rem;
     margin: 0;
 
+}
+
+.loading-animation{
+    min-width: 10rem;
+    min-height: 10rem;
+    margin: auto;
 }
 
 /* Navbar */
@@ -92,44 +92,43 @@ h1 {
 
 /* Search Bar */
 .search-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 15px 0;
+    display: flex;
+    max-width: 80vw;
+    margin: auto;
 }
 
 .search-box {
     display: flex;
     align-items: center;
     border: 2px solid var(--primary);
-    border-radius: 25px;
-    padding: 5px 15px;
+    border-radius: 10px;
+    padding: 0;
     background-color: var(--white);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
 }
 
 .search-box input[type="text"] {
     border: none;
     outline: none;
-    padding: 10px;
-    font-size: 16px;
-    width: 100%;
+    font-size: 1rem;
+    margin: 0.6rem;
     color: var(--black);
+    background-color: #ffffff00;
 }
 
-.search-box button {
+.search-container button {
     border: none;
-    background-color: var(--primary);
-    color: var(--white);
-    padding: 10px 15px;
-    font-size: 16px;
-    border-radius: 20px;
     cursor: pointer;
-    margin-left: 10px;
+    background-color: var(--white);
+    margin: 0 0.5rem;
+}
+.search-container button img{
+    max-height: 2rem;
 }
 
 .search-box button:hover {
-    background-color: #45a049;
+
+    cursor: pointer;
 }
 
 /* Tips Box */
@@ -137,55 +136,39 @@ h1 {
     background-color: var(--white);
     border: 1px solid var(--primary);
     border-radius: 10px;
-    padding: 20px;
-    width: 100%;
-    max-width: 400px;
+    padding: 2rem;
+    max-width: 50em;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
     text-align: center;
+    margin: 6rem auto;
 }
 
 .tips-box h2 {
     color: var(--primary);
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
 }
 
 .tips-box ul {
     padding: 0;
     list-style-position: inside;
+    padding: 1rem 2rem;
 }
 
 .tips-box ul li {
-    font-size: 1rem;
-    margin-bottom: 8px;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
     text-align: left;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 1.8rem;
-    }
 
-    .navbar-menu-items li {
-        font-size: 1rem;
-    }
 
-    .search-box button {
-        font-size: 14px;
-        padding: 8px 10px;
-    }
-
-    .tips-box h2 {
-        font-size: 1.4rem;
-    }
-
-    .tips-box ul li {
-        font-size: 0.9rem;
-    }
+.home-container{
+    display: grid;
+    grid-template-rows: 1fr 2fr 0.5fr 1fr;
 }
+
+
+
 /* Header container */
 .header-container {
     display: flex; /* Use flexbox for alignment */
@@ -208,45 +191,34 @@ h1 {
     gap: 20px; /* Add spacing between buttons */
 }
 
+.itt-container img{
+    max-height: 2rem;
+    filter: invert(1) brightness(2);
+}
+
+.itt-container{
+    display: flex;
+    max-height: 4rem;
+    margin: auto;
+}
+
 /* Styles for Capture Button */
-.capture-button {
-    padding: 12px 25px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 30px;
-    background-color: #428d74;
-    color: white;
+.capture-button,.upload-button {
+    padding: 1rem;
+    margin: 0 0.5rem;
+    border-radius: 10px;
+    background-color: var(--black);
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.capture-button:hover {
+.capture-button:hover, .upload-button:hover {
     background-color: #36b1a1;
-    transform: scale(1.05);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
-/* Styles for Upload Button */
-.upload-button {
-    padding: 12px 25px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 30px;
-    background-color: #428d74;
-    color: white;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
 
-.upload-button:hover {
-    background-color: #36b1a1;
-    transform: scale(1.05);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
-}
 .hero-section {
     height: 100vh;
     background-size: cover;
@@ -258,4 +230,27 @@ h1 {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+
+@media screen and (max-width: 600px) {
+    .tips-box ul {
+        padding: 0;
+        list-style-position: inside;
+        padding: 0;
+    }
+
+    .tips-box ul li{
+        font-size: 1rem;
+    }
+    .tips-box {
+        padding: 1rem;
+        max-width: 80vw;
+        margin: 6rem auto;
+    }
+    
+    .tips-box h2 {
+        font-size: 1.8rem;
+    }
+
 }

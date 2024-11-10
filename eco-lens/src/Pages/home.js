@@ -1,5 +1,6 @@
 import Nav from "../Components/Navbar";
-import Hero from "../Components/Hero";
+import Search from "../Components/Search";
+import ToolTips from "../Components/ToolTips";
 import ImageToText from "../LLM/ImageToText";
 import LoadingImage from "../Components/Loading";
 import React from 'react';
@@ -8,10 +9,13 @@ export default function Home() {
   return (
         <>
         
+        <div class="home-container">
           <Nav/>
           <LoadingImage/>
+          <Search/>
           <ImageToText/>
-          <Hero/>
+        </div>
+          <ToolTips/>
           
           
         </>
