@@ -15,10 +15,6 @@ export default function Navbar(){
     </div>
     
 </div>
-<div class="button-container">
-    <a href="capture-link.html" class="capture-button">Capture</a>
-</div>
-<p>OR</p>
 
             {/* <div className="navbar-container">
                 <div className="navbar-menu">

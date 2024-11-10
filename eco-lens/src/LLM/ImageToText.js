@@ -7,7 +7,7 @@ const UploadImage = () => {
   const [localImageFile, setLocalImageFile] = useState(null);  // Local state for the image file
   const { setImageData } = useImageData();  // Access the context
 
-  // This function will convert the selected image to base64 format
+  // This function will convert the captured image to base64 format
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -21,7 +21,7 @@ const UploadImage = () => {
 
   const handleSubmit = async () => {
     if (!localImageFile) {
-      alert("Please upload an image first!");
+      alert("Please capture an image first!");
       return;
     }
 
@@ -54,14 +54,22 @@ const UploadImage = () => {
 
   return (
     <div>
-      <div class="button-container">
-      <h1>Upload Image for Prediction</h1>
+      <div className="button-container">
+        <h1>Capture Image for Prediction</h1>
       </div>
-      <input type="file" onChange={handleImageChange} />
+      <label htmlFor="camera-input" className="capture-button">Capture</label>
+      <input
+        type="file"
+        id="camera-input"
+        accept="image/*"
+        capture="camera" // Trigger the camera app
+        onChange={handleImageChange}
+        style={{ display: 'none' }} // Hide the input element
+      />
       <button onClick={handleSubmit}>Submit</button>
 
       {/* Display prediction from context */}
-      {localImageFile && <h2>Image Selected. <Link to="/test">View Prediction</Link></h2>}
+      {localImageFile && <h2>Image Captured. <Link to="/test">View Prediction</Link></h2>}
     </div>
   );
 };
