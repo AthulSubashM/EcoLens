@@ -3,7 +3,6 @@ import { useImageData } from '../Contexts/ImageDataContext'; // Import the conte
 import Nav from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Results from "../Components/ResultBox"; // Import the Results component
-import { useNavigate } from 'react-router-dom';
 import Search from "../Components/Search"; // Import the Search component
 import Itt from "../LLM/ImageToText";
 import OtherResults from '../Components/OtherResults';
@@ -13,7 +12,6 @@ const PredictionDetail = () => {
   const [loading, setLoading] = useState(false); // Loading state
   const [showResults, setShowResults] = useState(false); // State to track if Results should be shown
   const [showSearch, setShowSearch] = useState(false); // State to track if Search should be shown
-  const navigate = useNavigate();
 
   const handleYesClick = () => {
     if (!firstResult) {

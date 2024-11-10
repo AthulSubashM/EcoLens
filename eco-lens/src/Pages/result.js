@@ -39,7 +39,7 @@ const PredictionDetail = () => {
           requestBody, // Send the structured request body
           {
             headers: {
-              'Authorization': 'Bearer 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', // Replace with your Groq API key
+              'Authorization': `Bearer ${process.env.REACT_APP_GROQ_API_KEY}`, // Replace with your Groq API key
               'Content-Type': 'application/json' // Ensure content type is JSON
             }
           }

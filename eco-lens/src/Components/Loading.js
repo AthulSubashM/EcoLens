@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import loadingGif from '../Assets/eco.gif';  // Animated GIF
-import loadingPng from '../Assets/eco_static.png';  // Static PNG
 import '../Loading.css';
 
 export default function Loading() {
