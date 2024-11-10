@@ -18,7 +18,7 @@ const PredictionDetail = () => {
       messages: [
         {
           role: 'user',
-          content: `Give 2-3 sentences on how to recycle in JSON format ${firstResult}`  // Send the first label as a prompt
+          content: `${firstResult} categorize the given object into the following, Bio-Degradable, recyclable, hazardous waste, electronic waste, non-recyclable waste, clothing. Also provide a description on how to dispose of the object based on the category decided, for the description give about 2-3 sentences, describing on the simplest method of disposal, for example, simplest method is if local municipality comes to collect that specific type of waste if not, what can we do on our own. electronic waste needs to be sent to a near by recycling center. Return as a json file only with category and description. If there is no likely category for the object output -1 and do not give a description in case of -1.`  // Send the first label as a prompt
         }
       ],
       response_format: { type: 'json_object' }
