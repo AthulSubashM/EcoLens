@@ -55,7 +55,7 @@ const UploadImage = () => {
       setImageData({ imageFile: imageData, prediction: labels });
 
       // Redirect to result page after prediction
-      navigate('/result');
+      navigate('/confirm');
     } catch (error) {
       console.error('Error uploading image:', error);
     }

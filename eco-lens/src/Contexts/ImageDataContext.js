@@ -19,7 +19,7 @@ export const ImageDataProvider = ({ children }) => {
   }, [imageData.prediction]); // Depend on prediction changes
 
   return (
-    <ImageDataContext.Provider value={{ imageData, setImageData, firstResult }}>
+    <ImageDataContext.Provider value={{ imageData, setImageData, firstResult, setFirstResult }}>
       {children}
     </ImageDataContext.Provider>
   );

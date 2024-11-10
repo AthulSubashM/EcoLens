@@ -34,18 +34,20 @@ h1 {
     min-width: 10rem;
     min-height: 10rem;
     margin: auto;
+    margin-top: 3rem;
 }
 
 /* Navbar */
 .navbar-container {
     width: 100vw;
+    min-height: 4rem;
+    max-height: 4rem;
     background:  var(--primary);
     text-align: center;
     border: 1px solid rgba(var(--primary), 0.2);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     color: var(--white);
     padding: 1rem 0;
-    margin-bottom: 2rem;
     backdrop-filter: blur(5px) saturate(150%);
     
 }
@@ -94,7 +96,7 @@ h1 {
 .search-container {
     display: flex;
     max-width: 80vw;
-    margin: auto;
+    margin: 2rem auto;
 }
 
 .search-box {
@@ -230,6 +232,32 @@ h1 {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.confirm-container{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    width: 100%;
+}
+
+.confirm-container img{
+    margin: 2rem 1rem;
+    min-height: 40vh;
+    min-width: 20rem;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.confirm-text{
+    background-color: var(--white);
+    border: 1px solid var(--primary);
+    min-width: 20rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 12rem;
+    
 }
 
 
