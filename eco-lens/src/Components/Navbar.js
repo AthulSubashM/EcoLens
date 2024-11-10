@@ -9,12 +9,12 @@ export default function Navbar(){
         <>
         
     
-    <div class="header-container">
-    <div class="logo-box"> 
-    <h1>Eco-Lens</h1>
+    <div class="navbar-container">
+    
+    <h1>Eco Lens</h1>
     </div>
     
-</div>
+
 
             {/* <div className="navbar-container">
                 <div className="navbar-menu">

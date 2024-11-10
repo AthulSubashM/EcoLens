@@ -8,10 +8,9 @@ export default function Home() {
   return (
         <>
         
-        <LoadingImage/>
           <Nav/>
+          <LoadingImage/>
           <ImageToText/>
-          
           <Hero/>
           
           
