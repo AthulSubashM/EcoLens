@@ -363,11 +363,50 @@ h1 {
 }
 
 
-.footer-container{
+.footer-container {
     min-height: 30vh;
     background-color: var(--black);
     min-width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    align-items: center; /* Center items vertically */
+    justify-items: stretch; /* Ensure items stretch across columns */
 }
+
+.footer-container h1 {
+    justify-self: start;
+    color: var(--primary);
+    font-family: "Delius";
+    font-size: 4rem;
+    margin-left: 4rem;
+}
+
+.footer-links{
+    display: grid;
+    justify-items: start;
+    justify-self: end;
+    align-content: center;
+    margin-right: 4rem;
+}
+
+.footer-links a{
+    display: flex;
+    align-items: center;
+}
+
+.linkedin{
+    fill: var(--primary);
+    width: 1.6rem;
+    margin-right: 0.5rem;
+}
+
+.footer-container a{
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: var(--OpenSans);
+}
+
 
 
 
@@ -390,6 +429,29 @@ h1 {
     
     .tips-box h2 {
         font-size: 1.8rem;
+    }
+
+    .footer-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1.5fr;
+    }
+    .footer-container h1 {
+        justify-self: center;
+        margin-left: 0;
+    }
+    .footer-links{
+        justify-items: start;
+        justify-self: center;
+        align-content: center;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+    .linkedin{
+        width: 1.2rem;
+    }
+    
+    .footer-container a{
+        font-size: 1rem;
     }
 
 }
