@@ -152,8 +152,8 @@ h1 {
     padding: 2rem;
     max-width: 50em;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
     margin: 6rem auto;
+    list-style-type: none;
 }
 
 .tips-box h2 {
@@ -162,15 +162,17 @@ h1 {
 }
 
 .tips-box ul {
-    padding: 0;
     list-style-position: inside;
-    padding: 1rem 2rem;
+    font-weight: bold;
+    padding: 1rem 2rem 0rem;
 }
 
 .tips-box ul li {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    text-align: left;
+}
+.tips-box p{
+    padding: 0rem 2rem;
 }
 
 
