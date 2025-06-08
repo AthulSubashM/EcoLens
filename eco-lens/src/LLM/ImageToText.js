@@ -36,7 +36,7 @@ const UploadImage = () => {
         data,
         {
           headers: {
-            'Authorization': 'Bearer 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', // Use your Hugging Face API key
+            'Authorization': , // Use your Hugging Face API key
             'Content-Type': 'application/json', // Content type should be JSON
           }
         }
