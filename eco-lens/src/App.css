@@ -42,7 +42,7 @@ h1 {
 
 /* Navbar */
 .navbar-container {
-    width: 100vw;
+    width: 100%;
     min-height: 4rem;
     max-height: 4rem;
     background:  var(--primary);
@@ -368,7 +368,7 @@ h1 {
 .footer-container {
     min-height: 30vh;
     background-color: var(--black);
-    min-width: 100vw;
+    min-width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two columns */
     align-items: center; /* Center items vertically */
