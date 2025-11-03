@@ -1,4 +1,4 @@
-name: Deploy React app to GitHub Pages
+name: Deploy React app (in subfolder) to GitHub Pages
 
 on:
   push:
@@ -27,16 +27,20 @@ jobs:
         with:
           node-version: 20
 
+      # 👇 move into your React app directory
       - name: Install dependencies
+        working-directory: ./eco-lens
         run: npm ci
 
       - name: Build React app
+        working-directory: ./eco-lens
         run: npm run build
 
+      # 👇 upload the build output
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: ./eco-lens/build
 
   deploy:
     environment:
