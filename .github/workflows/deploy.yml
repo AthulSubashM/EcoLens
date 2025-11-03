@@ -30,7 +30,7 @@ jobs:
       # 👇 move into your React app directory
       - name: Install dependencies
         working-directory: ./eco-lens
-        run: npm ci
+        run: npm install
 
       - name: Build React app
         working-directory: ./eco-lens
