@@ -2,7 +2,6 @@
 
 *Simplifying waste disposal with AI-powered image classification.*
 
-[**🚀 Try Eco Lens Live Here!**](https://www.eco-lens.co/)
 
 ![Eco Lens Demo](eco-lens/src/Assets/ecolens_demo.gif)
 ---
