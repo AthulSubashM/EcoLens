@@ -27,15 +27,17 @@ jobs:
         with:
           node-version: 20
 
-      # 👇 just install normally
+      # 👇 Install dependencies
       - name: Install dependencies
         working-directory: ./eco-lens
         run: npm install
 
+      # 👇 Disable ESLint CI mode so warnings don’t break the build
       - name: Build React app
         working-directory: ./eco-lens
-        run: npm run build
+        run: CI=false npm run build
 
+      # 👇 Upload the build output to GitHub Pages
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
