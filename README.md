@@ -4,7 +4,10 @@
 
 
 ![Eco Lens Demo](eco-lens/src/Assets/ecolens_demo.gif)
----
+
+[https://athulsubashm.github.io/Ecolens](https://athulsubashm.github.io/EcoLens/)
+
+### ⚠️ Notice: Hugging Face models used by this demo are no longer available, so the app does not function.
 
 ## Inspiration
 
